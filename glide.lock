@@ -1,0 +1,6 @@
+hash: ba57cbf5cd5a3aa187e5e27ddb21956902d1701f40bffcd52776f8eb779110e0
+updated: 2018-07-25T13:18:09.215460979+02:00
+imports:
+- name: github.com/globalsign/mgo
+  version: 113d3961e7311526535a1ef7042196563d442761
+testImports: []

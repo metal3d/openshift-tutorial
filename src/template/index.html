@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>My simple app</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+    <main class="container">
+    <h1 id="heading">This is the resutls !</h1>
+    <div>
+        <ul>
+        {{ range .Data }}
+        <li>{{ .Name }}</li>
+        {{ end  }}
+        </ul>
+    </div>
+
+
+    <div>
+        <form class="form" action="/save" method="post">
+            <div class="form-group">
+                <input type="text" name="Name" />
+            </div>
+            <button type="submit" class="btn btn-success">Send</button>
+        </form>
+    </div>
+    </main>
+
+</body>
+</html>

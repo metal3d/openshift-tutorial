@@ -1,0 +1,28 @@
+version: "2"
+services:
+    database:
+        image: centos/mongodb-32-centos7:latest
+        environment:
+            MONGODB_USER: mongouser
+            MONGODB_PASSWORD: mongopass
+            MONGODB_DATABASE: mydb
+            MONGODB_ADMIN_PASSWORD: rootpass
+
+        volumes:
+            - db:/var/lib/mongodb/data
+    app:
+        build: .
+        ports:
+            - 8000:8000
+        volumes:
+            - ./src/template:/go/src/app/template
+        privileged: true
+        environment:
+            MONGODB_USER: mongouser
+            MONGODB_PASSWORD: mongopass
+            MONGODB_DATABASE: mydb
+            DB_HOST: database
+
+
+volumes:
+    db:
